@@ -42,7 +42,7 @@ public class SolveClique {
 		}
 	}
 	
-	public static void findKClique(int[][] graphData) {
+	public void findKClique(int[][] graphData) {
 		for (int i = 0; i < graphData.length; i++) {
 			for (int j = 0; j < graphData[i].length; j++) {
 				System.out.print(graphData[i][j]);
