@@ -10,12 +10,13 @@ import java.util.Scanner;
  * 
  *         IT328 Program to read in graph information from file and then use
  *         k-clique information to reduce the independent set problem to the
- *         k-clique problem to find the maximum independent set for a given graph
+ *         k-clique problem to find the maximum independent set for a given
+ *         graph
  *
  */
 public class SolveISet {
 
-	public static void main(String[] args) {
+	public static void solveSet() {
 		File file = new File("/home/gstrain/Desktop/npc/graphs18.txt");
 
 		try {
@@ -43,12 +44,12 @@ public class SolveISet {
 						}
 					}
 				}
+				
+				
 
 				if (size == 0)
 					break;
 			}
-			
-			
 
 			sc.close();
 		} catch (FileNotFoundException e) {
