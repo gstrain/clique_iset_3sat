@@ -22,8 +22,6 @@ public class SolveISet {
 		 */
 		
 		File file = new File("/home/gstrain/Desktop/npc/graphs18.txt");
-		
-		SolveClique clique = new SolveClique();
 
 		try {
 			Scanner sc = new Scanner(file);
@@ -51,7 +49,7 @@ public class SolveISet {
 					}
 				}
 				
-				clique.findKClique(graphData);
+				SolveClique.findKClique(graphData);
 				
 				if (size == 0)
 					break;
