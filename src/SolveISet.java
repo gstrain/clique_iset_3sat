@@ -13,7 +13,7 @@ import java.util.Scanner;
  *         k-clique problem to find the maximum independent set for a given graph
  *
  */
-public class IndependentSet {
+public class SolveISet {
 
 	public static void main(String[] args) {
 		File file = new File("/home/gstrain/Desktop/npc/graphs18.txt");
@@ -43,14 +43,12 @@ public class IndependentSet {
 						}
 					}
 				}
-				
-				/** 
-				 * This is the spot where the logic should go to determine the independent set
-				 */
 
 				if (size == 0)
 					break;
 			}
+			
+			
 
 			sc.close();
 		} catch (FileNotFoundException e) {
