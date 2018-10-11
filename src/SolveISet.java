@@ -16,7 +16,11 @@ import java.util.Scanner;
  */
 public class SolveISet {
 
-	public static void solveSet() {
+	public static void main(String[] args) {
+		/* This will have to be different depending on workspace. Eventually, this will 
+		 * be localized to the files on the Linux server for turn-in
+		 */
+		
 		File file = new File("/home/gstrain/Desktop/npc/graphs18.txt");
 
 		try {
