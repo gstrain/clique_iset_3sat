@@ -17,47 +17,57 @@ import java.util.Scanner;
 public class SolveISet {
 
 	public static void main(String[] args) {
-		/* This will have to be different depending on workspace. Eventually, this will 
+		/*
+		 * This will have to be different depending on workspace. Eventually, this will
 		 * be localized to the files on the Linux server for turn-in
 		 */
 		
-		File file = new File("/home/gstrain/Desktop/npc/graphs18.txt");
+		System.out.println(args.length);
 
-		try {
-			Scanner sc = new Scanner(file);
+		if (args.length > 0) {
+			
+			String fileName = args[0];
 
-			int[][] graphData = new int[10][10];
+			File file = new File(fileName);
 
-			while (sc.hasNextLine()) {
+			try {
+				Scanner sc = new Scanner(file);
 
-				int size = Integer.parseInt(sc.next());
+				int[][] graphData = new int[10][10];
 
-				graphData = new int[size][size];
+				while (sc.hasNextLine()) {
 
-				for (int i = 0; i < size; i++) {
-					for (int j = 0; j < size; j++) {
-						int val = Integer.parseInt(sc.next());
-						if (i != j) {
-							if (val == 0) {
-								graphData[i][j] = 1;
+					int size = Integer.parseInt(sc.next());
+
+					graphData = new int[size][size];
+
+					for (int i = 0; i < size; i++) {
+						for (int j = 0; j < size; j++) {
+							int val = Integer.parseInt(sc.next());
+							if (i != j) {
+								if (val == 0) {
+									graphData[i][j] = 1;
+								} else {
+									graphData[i][j] = 0;
+								}
 							} else {
-								graphData[i][j] = 0;
+								graphData[i][j] = val;
 							}
-						} else {
-							graphData[i][j] = val;
 						}
 					}
-				}
-				
-				SolveClique.findKClique(graphData);
-				
-				if (size == 0)
-					break;
-			}
 
-			sc.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File could not be found.");
+					SolveClique.findKClique(graphData);
+
+					if (size == 0)
+						break;
+				}
+
+				sc.close();
+			} catch (FileNotFoundException e) {
+				System.out.println("File could not be found.");
+			}
+		} else {
+			System.out.println("No file specified.");
 		}
 
 	}
