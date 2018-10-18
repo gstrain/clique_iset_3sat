@@ -21,8 +21,6 @@ public class SolveISet {
 		 * This will have to be different depending on workspace. Eventually, this will
 		 * be localized to the files on the Linux server for turn-in
 		 */
-		
-		System.out.println(args.length);
 
 		if (args.length > 0) {
 			
